@@ -1,8 +1,7 @@
 const keys = document.getElementById('keys');
 const screen = document.getElementById('screen');
 let hasOperator = false;
-let hasRaix = false;
-let hasSqua = false;
+
 keys.addEventListener('click',(e)=>{
     let operations = {
         number:()=>screen.textContent +=e.target.textContent,
@@ -11,28 +10,6 @@ keys.addEventListener('click',(e)=>{
                 screen.textContent+=e.target.textContent;
             }
            
-        },
-        raix:()=>{
-            for(let i=0;i<=screen.textContent.length;i++){
-
-                if(hasRaix===false && !screen.textContent.includes('√')){
-                    screen.textContent+=e.target.textContent;
-                    hasRaix=true;
-                    break;
-                }
-               hasRaix=false;
-            }
-        },
-        squa:()=>{
-            for(let i=0;i<=screen.textContent.length;i++){
-
-                if(hasSqua===false && !screen.textContent.includes('²')){
-                    screen.textContent+=e.target.textContent;
-                    hasSqua=true;
-                    break;
-                }
-               hasSqua=false;
-            }
         },
         remover:()=>screen.textContent = '',
         removeone:()=>screen.textContent = screen.textContent.slice(0,screen.textContent.length-1),
